@@ -30,15 +30,20 @@ public class Principal {
 	public static void main(String[] args) {
 		
         Archivo archivo = new Archivo();
+        PosfixCalc posfixCalc = new PosfixCalc();
         ArrayList<String> filasLeidas = new ArrayList<String>();
-
+        int contador  = 0;
         filasLeidas = archivo.leerTxt();
         for (String fila : filasLeidas) {
-            System.out.println(fila);
-        }
-
         
+            int resultado = posfixCalc.Evaluate(fila.replace(" ",""));
+            contador = contador + 1;
+            System.out.println("El resultado de la expresion en la fila " + contador + " de su documento es: " + resultado);
+            
+        }
 
     }
 
 }
+
+
